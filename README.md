@@ -42,6 +42,6 @@ classDiagram
     }
 
     User "1" -- "1" Account : has
-    User "1" -- "*" Feature : has
+    User "1" -- "N" Feature : has
     User "1" -- "1" Card : has
-    User "1" -- "*" News : has
+    User "1" -- "N" News : has
