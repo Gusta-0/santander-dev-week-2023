@@ -1,10 +1,12 @@
 package com.gustavo.santanderdevweek2023.domain.model;
+
 import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity(name = "tb_user")
 public class User {
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -13,7 +15,7 @@ public class User {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Account account;
-
+    
     @OneToOne(cascade = CascadeType.ALL)
     private Card card;
 
@@ -22,7 +24,6 @@ public class User {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<News> news;
-
 
     public Long getId() {
         return id;
@@ -71,4 +72,5 @@ public class User {
     public void setNews(List<News> news) {
         this.news = news;
     }
+
 }
